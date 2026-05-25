@@ -17,7 +17,7 @@ Soft assertions: Use of expect.soft, for example in expect.soft(page.getByRole('
 
 
 */
-/*
+
 test.describe('Activity 2: TodoMVC tests', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://demo.playwright.dev/todomvc/#/');
@@ -158,7 +158,7 @@ test.describe('Activity 2: TodoMVC tests', () => {
     await expect(page.getByPlaceholder('What needs to be done?')).toBeVisible();
   });
 });
-*/
+
 
 test.describe('Mercado Libre',()=>{
 
