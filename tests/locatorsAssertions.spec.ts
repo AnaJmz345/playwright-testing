@@ -164,22 +164,33 @@ test.describe('Mercado Libre',()=>{
 
   test('Identifing elements ', async ({page}) => {
    
-  
+    // go to the Mercado Libre main page
     await page.goto('https://www.mercadolibre.com.mx/');
+
+    //take screenshot
     await page.screenshot({ path: 'screenshots/mercado_libre.png' });
-     await page.getByRole('link', { name: 'Crea tu cuenta' }).click();
+
+    // get by title test
+    await expect(page.getByTitle("Carrito")).toBeVisible();
+
+    // get by alt text test
+    await expect(page.getByAltText('MLM FSNB')).toBeVisible();
+
+    // get by placeholder test
+    await expect(page.getByPlaceholder("Buscar productos, marcas y más…",)).toBeVisible();
+
+    // get by label test
+    await expect(page.getByLabel("Ingresa lo que quieras encontrar")).toBeVisible();
+
+    // get by role test 
+    await page.getByRole('link', { name: 'Crea tu cuenta' }).click();
+
+    // get by test id test
     await page.getByTestId('email').fill('example@example.com');
-    await page.getByRole('link', { name: 'Mercado Libre México - Donde' }).click();
 
-    /*
+    // get by text test
+    await expect(page.getByText("Mis compras").first()).toBeHidden();
 
-  
-
-    await page.getByLabel('Beneficios en entretenimiento').locator('li').filter({ hasText: 'Página 1' });
-   */
-    //getByPlaceholder
-    //getByTitle
-    //getByAltText
 
   })
 
