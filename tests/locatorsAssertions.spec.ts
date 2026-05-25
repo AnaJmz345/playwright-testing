@@ -17,7 +17,7 @@ Soft assertions: Use of expect.soft, for example in expect.soft(page.getByRole('
 
 
 */
-
+/*
 test.describe('Activity 2: TodoMVC tests', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('https://demo.playwright.dev/todomvc/#/');
@@ -158,27 +158,29 @@ test.describe('Activity 2: TodoMVC tests', () => {
     await expect(page.getByPlaceholder('What needs to be done?')).toBeVisible();
   });
 });
-
+*/
 
 test.describe('Mercado Libre',()=>{
 
-  test('Identifing elements ', async ({}) => {
+  test('Identifing elements ', async ({page}) => {
    
-    const browser = await firefox.launch();
-    const mercadoLibre = await browser.newPage();
-    await mercadoLibre.goto('https://www.mercadolibre.com.mx/');
-    await mercadoLibre.screenshot({ path: 'screenshots/mercado_libre.png' });
+  
+    await page.goto('https://www.mercadolibre.com.mx/');
+    await page.screenshot({ path: 'screenshots/mercado_libre.png' });
+     await page.getByRole('link', { name: 'Crea tu cuenta' }).click();
+    await page.getByTestId('email').fill('example@example.com');
+    await page.getByRole('link', { name: 'Mercado Libre México - Donde' }).click();
 
-    await mercadoLibre.getByRole('link', { name: 'Mercado Libre México - Donde' })
-    await mercadoLibre.getByText('Crea tu cuenta').click();
-    await mercadoLibre.getByTestId('thb-double-container').getByRole('link', { name: 'FULL HASTA 50% DE DESCUENTO' }).click();
-    await mercadoLibre.getByLabel('Beneficios en entretenimiento').locator('li').filter({ hasText: 'Página 1' });
+    /*
+
+  
+
+    await page.getByLabel('Beneficios en entretenimiento').locator('li').filter({ hasText: 'Página 1' });
+   */
     //getByPlaceholder
     //getByTitle
     //getByAltText
 
-    
-    await browser.close();
   })
 
 })
