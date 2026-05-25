@@ -136,22 +136,5 @@ test.describe('Activity 4: Pages methods',()=>{
 
 })
 
-/*test.describe('Mercado Libre',()=>{
-
-  test('Identifing elements ', async ({}) => {
-   
-    const browser = await firefox.launch();
-    const mercadoLibre = await browser.newPage();
-    await mercadoLibre.goto('https://www.mercadolibre.com.mx/');
-    await mercadoLibre.screenshot({ path: 'screenshot.png' });
-    await mercadoLibre.getByRole('link', { name: 'Mercado Libre México - Donde' })
-    await mercadoLibre.getByText('Crea tu cuenta').click();
-    await mercadoLibre.getByTestId('thb-double-container').getByRole('link', { name: 'FULL HASTA 50% DE DESCUENTO' }).click();
-    await mercadoLibre.getByLabel('Beneficios en entretenimiento').locator('li').filter({ hasText: 'Página 1' });
-    //HACER LOS OTROS 3
-    await browser.close();
-  })
-
-})*/
 
 
